@@ -22,11 +22,10 @@ def step(x):
 #The function should return a numpy array of the same length, with all elements smaller than the cutoff being set to cutoff).
 #The name of the function should be ReLu
 
-
-def ReLu(arr, cutoff=0):
+# Your code here:
+def ReLU(arr, cutoff=0):  
     """Return a numpy array where elements below the cutoff are set to the cutoff."""
-    # Ensure the input is a numpy array
-    arr = np.array(arr)
+    arr = np.array(arr)  
     return np.maximum(arr, cutoff)
 
 # Task 3:
@@ -38,10 +37,6 @@ def ReLu(arr, cutoff=0):
 
 # Your code here:
 def neural_net_layer(matrix, vector):
-    """Multiply a two-dimensional numpy array with a one-dimensional numpy array,
-    then apply the ReLu function to the result."""
-    result = numpy.dot(matrix, vector)
-    return ReLu(result)
-
-
-# ------------------------------------------
+    """Multiply a 2D numpy array with a 1D numpy array and apply ReLU."""
+    result = np.dot(matrix, vector)
+    return ReLU(result)
