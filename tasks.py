@@ -11,12 +11,9 @@ import numpy
 #The name of the function should be step
 
 # Your code here:
-# -----------------------------------------------
-
-def step
-
-
-# -----------------------------------------------
+def step(x):
+    """Return 1 if x is greater than 0, otherwise return -1."""
+    return 1 if x > 0 else -1
 
 
 # Task 2:
@@ -26,13 +23,9 @@ def step
 #The name of the function should be ReLu
 
 
-# Your code here:
-# -----------------------------------------------
-def ReLu
-
-
-# -----------------------------------------------
-
+def ReLu(arr, cutoff=0):
+    """Return a numpy array where elements below the cutoff are set to the cutoff."""
+    return numpy.maximum(arr, cutoff)
 
 # Task 3:
 # Instructions:
@@ -42,9 +35,11 @@ def ReLu
 #Name the function neural_net_layer
 
 # Your code here:
-# -----------------------------------------------
-
-def neural_net_layer
+def neural_net_layer(matrix, vector):
+    """Multiply a two-dimensional numpy array with a one-dimensional numpy array,
+    then apply the ReLu function to the result."""
+    result = numpy.dot(matrix, vector)
+    return ReLu(result)
 
 
 # ------------------------------------------
