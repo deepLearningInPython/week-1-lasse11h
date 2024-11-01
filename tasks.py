@@ -25,7 +25,9 @@ def step(x):
 
 def ReLu(arr, cutoff=0):
     """Return a numpy array where elements below the cutoff are set to the cutoff."""
-    return numpy.maximum(arr, cutoff)
+    # Ensure the input is a numpy array
+    arr = np.array(arr)
+    return np.maximum(arr, cutoff)
 
 # Task 3:
 # Instructions:
