@@ -23,14 +23,11 @@ def step(x):
 #The name of the function should be ReLu
 
 # Your code here:
-import numpy as np
-
-def ReLu(arr, cutoff=0):
-    # Ensure the input is a numpy array
+def ReLU(arr, cutoff=0):
     arr = np.array(arr)
-    # Apply the ReLU transformation
     arr[arr < cutoff] = cutoff
     return arr
+
 # Task 3:
 # Instructions:
 #Write a function that takes in a two-dimensional numpy array of size (n, p) and a one-dimensional numpy array of size p.
@@ -47,6 +44,6 @@ def neural_net_layer(matrix, vector):
     result = np.dot(matrix, vector)
     
     # Apply the ReLU function to the result
-    result = ReLu(result)
+    result = ReLU(result)
     
     return result
