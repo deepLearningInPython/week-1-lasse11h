@@ -37,13 +37,14 @@ def ReLU(arr, cutoff=0):
 
 # Your code here:
 def neural_net_layer(matrix, vector):
-    # Ensure the vector is reshaped properly for matrix multiplication
-    vector = vector.reshape(-1, 1)  # Reshape to (p, 1) if needed
-    
-    # Perform matrix multiplication
+    # Ensure the vector is suitable for matrix multiplication
     result = np.dot(matrix, vector)
     
-    # Apply the ReLU function to the result
+    # Flatten the result to 1D (if necessary)
+    result = result.flatten()
+    
+    # Apply the ReLU function
     result = ReLU(result)
     
     return result
+
