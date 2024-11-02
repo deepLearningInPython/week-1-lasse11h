@@ -23,11 +23,14 @@ def step(x):
 #The name of the function should be ReLu
 
 # Your code here:
-def ReLU(arr, cutoff=0):  
-    """Return a numpy array where elements below the cutoff are set to the cutoff."""
-    arr = np.array(arr)  
-    return np.maximum(arr, cutoff)
+import numpy as np
 
+def ReLu(arr, cutoff=0):
+    # Ensure the input is a numpy array
+    arr = np.array(arr)
+    # Apply the ReLU transformation
+    arr[arr < cutoff] = cutoff
+    return arr
 # Task 3:
 # Instructions:
 #Write a function that takes in a two-dimensional numpy array of size (n, p) and a one-dimensional numpy array of size p.
@@ -37,6 +40,13 @@ def ReLU(arr, cutoff=0):
 
 # Your code here:
 def neural_net_layer(matrix, vector):
-    """Multiply a 2D numpy array with a 1D numpy array and apply ReLU."""
+    # Ensure the vector is reshaped properly for matrix multiplication
+    vector = vector.reshape(-1, 1)  # Reshape to (p, 1) if needed
+    
+    # Perform matrix multiplication
     result = np.dot(matrix, vector)
-    return ReLU(result)
+    
+    # Apply the ReLU function to the result
+    result = ReLu(result)
+    
+    return result
