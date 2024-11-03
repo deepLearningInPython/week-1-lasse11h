@@ -23,10 +23,8 @@ def step(x):
 #The name of the function should be ReLu
 
 # Your code here:
-def ReLU(arr, cutoff=0):
-    arr = np.array(arr)
-    arr[arr < cutoff] = cutoff
-    return arr
+def ReLu(num, cutoff = 0):
+    return numpy.where(num < cutoff, cutoff, num)
 
 # Task 3:
 # Instructions:
@@ -36,15 +34,8 @@ def ReLU(arr, cutoff=0):
 #Name the function neural_net_layer
 
 # Your code here:
-def neural_net_layer(matrix, vector):
-    # Ensure the vector is suitable for matrix multiplication
-    result = np.dot(matrix, vector)
-    
-    # Flatten the result to 1D (if necessary)
-    result = result.flatten()
-    
-    # Apply the ReLU function
-    result = ReLU(result)
-    
-    return result
+
+def neural_net_layer(num1, num2):
+    a = numpy.dot(num1, num2)
+    return ReLu(a)
 
