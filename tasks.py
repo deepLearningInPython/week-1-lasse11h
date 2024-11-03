@@ -23,8 +23,8 @@ def step(x):
 #The name of the function should be ReLu
 
 # Your code here:
-def ReLu(num, cutoff = 0):
-    return numpy.where(num < cutoff, cutoff, num)
+def ReLu(arr, cutoff = 0):
+    return np.where(arr < cutoff, cutoff, arr)
 
 # Task 3:
 # Instructions:
@@ -36,6 +36,6 @@ def ReLu(num, cutoff = 0):
 # Your code here:
 
 def neural_net_layer(num1, num2):
-    a = numpy.dot(num1, num2)
+    a = np.dot(num1, num2)
     return ReLu(a)
 
